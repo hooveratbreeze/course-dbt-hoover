@@ -1,0 +1,53 @@
+version: 2
+
+sources:
+
+  - name: greenery # name of the source 
+    schema: public # this is the schema our raw data lives in
+    database: dbt # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 48, period: hour}
+
+    tables:
+      - name: superheroes 
+        loaded_at_field: created_at
+        description: >
+          Contains demographic information about each superhero
+          
+      - name: addresses 
+        description: >
+          Contains address information
+
+      - name: order_items
+        description: >
+          Contains information about order_items
+
+      - name: users 
+        loaded_at_field: created_at
+        description: >
+          Contains information about each user
+
+      - name: orders
+        loaded_at_field: created_at
+        description: >
+          Contains information about each order
+
+      - name: products
+        description: >
+          Contains information about each product
+
+      - name: promos 
+        description: >
+          Contains information about each promo
+
+      - name: events 
+        loaded_at_field: created_at
+        description: >
+          Contains information about each event

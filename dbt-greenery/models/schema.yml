@@ -1,0 +1,127 @@
+
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_superheroes
+    description: Demographics about each superhero such as name, hair color, height and weight.
+    columns:
+      - name: name
+        tests:
+          - not_null
+      - name: height
+        tests:
+          - positive_values
+      - name: weight
+        tests:
+          - positive_values     
+
+  - name: stg_addresses
+    description: "A staging table for addresses"
+    columns:
+      - name: address_id
+        tests:
+          - unique
+          - not_null
+      - name: address
+      - name: zipcode
+      - name: state
+      - name: country
+
+  - name: stg_events
+    description: "A staging table for events"
+    columns:
+      - name: event_id
+        tests:
+          - unique
+          - not_null
+      - name: session_id
+      - name: user_id
+      - name: event_type
+      - name: page_url
+      - name: created_at
+
+  - name: stg_order_items
+    description: "A staging table for orders_items"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: product_id
+      - name: user_id
+      - name: quantity
+
+  - name: stg_orders
+    description: "A staging table for orders"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+      - name: promo_id
+      - name: user_id
+      - name: address_id
+      - name: created_at
+      - name: order_cost
+      - name: shipping_cost
+      - name: order_total
+      - name: tracking_id
+      - name: shipping_service
+      - name: estimated_delivery_at
+      - name: delivered_at
+      - name: status
+
+  - name: stg_products
+    description: "A staging table for products"
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: name
+      - name: price
+      - name: quantity
+ 
+  - name: stg_promos
+    description: "A staging table for promos"
+    columns:
+      - name: promo_id
+        tests:
+          - unique
+          - not_null
+      - name: discount
+      - name: status
+
+  - name: stg_users
+    description: "A staging table for users"
+    columns:
+      - name: user_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: phone_number
+      - name: created_at
+      - name: updated_at
+      - name: address_id
