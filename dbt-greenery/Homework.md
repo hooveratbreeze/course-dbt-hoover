@@ -35,7 +35,6 @@ where status = 'delivered'
 ```
 select user_id from stg_orders 
 group by user_id having count(*) = 1
-
 ```
 
 =25 users
@@ -64,8 +63,8 @@ group by user_id having count(*) >= 3
 ```
 with sessions_agg as 
 (select count
-(distinct session_id) distinct_session_id
- ,date_trunc('hour', created_at) session_hr 
+(distinct session_id) distinct_session_id,
+ date_trunc('hour', created_at) session_hr 
  from stg_events 
  group by date_trunc('hour', created_at) 
 )
