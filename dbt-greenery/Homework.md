@@ -72,3 +72,16 @@ select round(avg(distinct_session_id),2) unique_sessions from sessions_agg
 ```
 
 =7.39 average sessions per hour 
+
+
+### Week 2
+
+#### 1) What is our user repeat rate?
+80.5%
+
+#### 2) What are good indicators of a user who will likely purchase again? What about indicators of users who are likely NOT to purchase again? If you had more data, what features would you want to look into to answer this question?
+
+Good indicators of users who will likely purchase again are multiple sessions of page visits spanning timeframes past their intitial order date period. On the flip side a user that registers no new sessions past their first order received date is likely not going to repeat purchase. If we had more data I'd look into creating a repeate purchase score that aggregates various user activity events into a preidictive/standardized metric.
+
+#### 3) Explain the marts models you added. Why did you organize the models in the way you did?
+I added in daily facts models into the marts for reporting that will allow business end users to quickly see their daily summaries.
