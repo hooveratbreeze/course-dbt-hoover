@@ -85,3 +85,10 @@ Good indicators of users who will likely purchase again are multiple sessions of
 
 #### 3) Explain the marts models you added. Why did you organize the models in the way you did?
 I added in daily facts models into the marts for reporting that will allow business end users to quickly see their daily summaries.
+
+### Week 3
+#### 1)  What is our overall conversion rate?
+36.1%
+
+#### 2) What is our conversion rate by product?
+
